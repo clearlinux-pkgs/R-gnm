@@ -4,15 +4,13 @@
 #
 Name     : R-gnm
 Version  : 1.1.0
-Release  : 9
+Release  : 10
 URL      : https://cran.r-project.org/src/contrib/gnm_1.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gnm_1.1-0.tar.gz
 Summary  : Generalized Nonlinear Models
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
 Requires: R-gnm-lib = %{version}-%{release}
-Requires: R-qvcalc
-Requires: R-relimp
 BuildRequires : R-qvcalc
 BuildRequires : R-relimp
 BuildRequires : buildreq-R
@@ -38,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552888874
+export SOURCE_DATE_EPOCH=1552896322
 
 %install
-export SOURCE_DATE_EPOCH=1552888874
+export SOURCE_DATE_EPOCH=1552896322
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
