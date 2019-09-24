@@ -4,13 +4,15 @@
 #
 Name     : R-gnm
 Version  : 1.1.0
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/gnm_1.1-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gnm_1.1-0.tar.gz
 Summary  : Generalized Nonlinear Models
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
 Requires: R-gnm-lib = %{version}-%{release}
+Requires: R-qvcalc
+Requires: R-relimp
 BuildRequires : R-qvcalc
 BuildRequires : R-relimp
 BuildRequires : buildreq-R
@@ -35,13 +37,13 @@ lib components for the R-gnm package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552896322
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569358945
 
 %install
-export SOURCE_DATE_EPOCH=1552896322
+export SOURCE_DATE_EPOCH=1569358945
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -70,12 +72,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  gnm || :
+R CMD check --no-manual --no-examples --no-codoc gnm || :
 
 
 %files
