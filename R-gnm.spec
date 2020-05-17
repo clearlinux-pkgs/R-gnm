@@ -4,7 +4,7 @@
 #
 Name     : R-gnm
 Version  : 1.1.1
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/gnm_1.1-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gnm_1.1-1.tar.gz
 Summary  : Generalized Nonlinear Models
@@ -35,21 +35,22 @@ lib components for the R-gnm package.
 
 %prep
 %setup -q -c -n gnm
+cd %{_builddir}/gnm
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580750262
+export SOURCE_DATE_EPOCH=1589752119
 
 %install
-export SOURCE_DATE_EPOCH=1580750262
+export SOURCE_DATE_EPOCH=1589752119
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
