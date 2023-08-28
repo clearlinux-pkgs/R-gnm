@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-gnm
-Version  : 1.1.3
-Release  : 44
-URL      : https://cran.r-project.org/src/contrib/gnm_1.1-3.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/gnm_1.1-3.tar.gz
+Version  : 1.1.4
+Release  : 45
+URL      : https://cran.r-project.org/src/contrib/gnm_1.1-4.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/gnm_1.1-4.tar.gz
 Summary  : Generalized Nonlinear Models
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
@@ -22,9 +22,12 @@ BuildRequires : buildreq-R
 %define debug_package %{nil}
 
 %description
-# gnm
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/gnm)](https://cran.r-project.org/package=gnm)
-[![R-CMD-check](https://github.com/hturner/gnm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hturner/gnm/actions/workflows/R-CMD-check.yaml)
+including models with multiplicative interaction terms such as the
+    UNIDIFF model from sociology and the AMMI model from crop science, and
+    many others.  Over-parameterized representations of models are used
+    throughout; functions are provided for inference on estimable
+    parameter combinations, as well as standard methods for diagnostics
+    etc.
 
 %package lib
 Summary: lib components for the R-gnm package.
@@ -45,10 +48,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1692980364
+export SOURCE_DATE_EPOCH=1693255256
 
 %install
-export SOURCE_DATE_EPOCH=1692980364
+export SOURCE_DATE_EPOCH=1693255256
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -123,11 +126,9 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/gnm/html/00Index.html
 /usr/lib64/R/library/gnm/html/R.css
 /usr/lib64/R/library/gnm/tests/testthat.R
-/usr/lib64/R/library/gnm/tests/testthat/outputs/biplotModel.rds
-/usr/lib64/R/library/gnm/tests/testthat/outputs/confint.rds
-/usr/lib64/R/library/gnm/tests/testthat/outputs/doubleUnidiff-contrasts.rds
-/usr/lib64/R/library/gnm/tests/testthat/outputs/doubleUnidiff.rds
-/usr/lib64/R/library/gnm/tests/testthat/outputs/yaish-mult.rds
+/usr/lib64/R/library/gnm/tests/testthat/_snaps/biplot.md
+/usr/lib64/R/library/gnm/tests/testthat/_snaps/confint.gnm.md
+/usr/lib64/R/library/gnm/tests/testthat/_snaps/doubleUnidiff.md
 /usr/lib64/R/library/gnm/tests/testthat/test-RC.R
 /usr/lib64/R/library/gnm/tests/testthat/test-RChomog.R
 /usr/lib64/R/library/gnm/tests/testthat/test-Symm.R
@@ -141,7 +142,6 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/gnm/tests/testthat/test-hskewL.R
 /usr/lib64/R/library/gnm/tests/testthat/test-logistic.R
 /usr/lib64/R/library/gnm/tests/testthat/test-stereotype.R
-/usr/lib64/R/library/gnm/tests/testthat/testthat-problems.rds
 
 %files lib
 %defattr(-,root,root,-)
