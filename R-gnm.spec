@@ -5,7 +5,7 @@
 #
 Name     : R-gnm
 Version  : 1.1.5
-Release  : 46
+Release  : 47
 URL      : https://cran.r-project.org/src/contrib/gnm_1.1-5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gnm_1.1-5.tar.gz
 Summary  : Generalized Nonlinear Models
